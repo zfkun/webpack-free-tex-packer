@@ -5,8 +5,10 @@ Webpack Free texture packer plugin \
 Based on https://github.com/zfkun/free-tex-packer
 
 # Install
-   
-$ npm install git@github.com:zfkun/webpack-free-tex-packer.git
+
+```shell
+npm install git@github.com:zfkun/webpack-free-tex-packer.git
+```
    
 # Basic usage
 
