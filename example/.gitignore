@@ -1,7 +1,4 @@
-# ide
-.idea/*
-
-#node modules
 node_modules
+dist
 
 package-lock.json

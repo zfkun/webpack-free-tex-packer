@@ -1,13 +1,13 @@
 {
     "name": "webpack-free-tex-packer",
-    "version": "0.3.4",
+    "version": "0.3.5",
     "description": "Webpack Free texture packer plugin",
-    "url": "https://github.com/odrick/webpack-free-tex-packer",
+    "url": "https://github.com/zfkun/webpack-free-tex-packer",
     "main": "index.js",
     "scripts": {},
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/odrick/webpack-free-tex-packer.git"
+        "url": "git+https://github.com/zfkun/webpack-free-tex-packer.git"
     },
     "keywords": [
         "texture",
@@ -25,11 +25,11 @@
     "author": "Alexander Norinchak",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/odrick/webpack-free-tex-packer/issues"
+        "url": "https://github.com/zfkun/webpack-free-tex-packer/issues"
     },
-    "homepage": "https://github.com/odrick/webpack-free-tex-packer#readme",
+    "homepage": "https://github.com/zfkun/webpack-free-tex-packer#readme",
     "dependencies": {
-        "chokidar": "^2.0.4",
-        "free-tex-packer-core": "^0.3.4"
+        "chokidar": "^3.5.2",
+        "free-tex-packer-core": "git@github.com:zfkun/free-tex-packer-core.git"
     }
 }

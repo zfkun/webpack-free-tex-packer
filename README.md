@@ -2,11 +2,11 @@
 
 [![Stats](https://nodei.co/npm/webpack-free-tex-packer.png?downloads=true&stars=true)](https://www.npmjs.com/package/webpack-free-tex-packer) \
 Webpack Free texture packer plugin \
-Based on https://github.com/odrick/free-tex-packer
+Based on https://github.com/zfkun/free-tex-packer
 
 # Install
    
-$ npm install webpack-free-tex-packer
+$ npm install git@github.com:zfkun/webpack-free-tex-packer.git
    
 # Basic usage
 
@@ -17,11 +17,10 @@ const path = require('path');
 const WebpackFreeTexPacker = require('webpack-free-tex-packer');
 
 module.exports = {
-    entry: [
-        './src/index',
-        'webpack-dev-server/client?http://localhost:8080'
-    ],
-    output: {filename: 'index.js'},
+    entry: {
+        index: './src/index'
+    },
+    output: { filename: 'index.js' },
     mode: 'development',
     plugins: [
         new WebpackFreeTexPacker(path.resolve(__dirname, 'atlases'))
@@ -44,19 +43,21 @@ Use packer options object, multiple sources, custom output folder
 const path = require('path');
 const WebpackFreeTexPacker = require('webpack-free-tex-packer');
 
-let sources = [];
-sources.push(path.resolve(__dirname, 'atlases/10.png'));
-sources.push(path.resolve(__dirname, 'atlases/11.png'));
-sources.push(path.resolve(__dirname, 'atlases/12.png'));
-sources.push(path.resolve(__dirname, 'atlases/dir1'));
-sources.push(path.resolve(__dirname, 'atlases/dir2/.'));
+const sources = [
+    path.resolve(__dirname, 'atlases/10.png'),
+    path.resolve(__dirname, 'atlases/11.png'),
+    path.resolve(__dirname, 'atlases/12.png'),
+    path.resolve(__dirname, 'atlases/dir1'),
+    path.resolve(__dirname, 'atlases/dir2/.'),
+];
 
-let packOptions = {
+const packOptions = {
     textureName: 'atlas',
     width: 512,
     height: 512,
     fixedSize: false,
     padding: 2,
+    allowSort: true,
     allowRotation: true,
     detectIdentical: true,
     allowTrim: true,
@@ -66,11 +67,10 @@ let packOptions = {
 };
 
 module.exports = {
-    entry: [
-        './src/index',
-        'webpack-dev-server/client?http://localhost:8080'
-    ],
-    output: {filename: 'index.js'},
+    entry: {
+        index: './src/index'
+    },
+    output: { filename: 'index.js' },
     mode: 'development',
     plugins: [
         new WebpackFreeTexPacker(sources, 'assets', packOptions)
@@ -97,7 +97,7 @@ http://localhost:8080/assets/atlas.json
 
 **Full example**
 
-https://github.com/odrick/webpack-free-tex-packer/tree/master/example
+https://github.com/zfkun/webpack-free-tex-packer/tree/master/example
 
  * download
  * npm install
@@ -106,13 +106,13 @@ https://github.com/odrick/webpack-free-tex-packer/tree/master/example
 
 ---
 
-**Pack options description**: https://github.com/odrick/free-tex-packer-core#available-options
+**Pack options description**: https://github.com/zfkun/free-tex-packer-core#available-options
 
-**Custom exporters description**: https://github.com/odrick/free-tex-packer-core#custom-exporter
+**Custom exporters description**: https://github.com/zfkun/free-tex-packer-core#custom-exporter
 
 # Used libs
 
-* **Free texture packer core** - https://github.com/odrick/free-tex-packer-core
+* **Free texture packer core** - https://github.com/zfkun/free-tex-packer-core
 * **Chokidar** - https://github.com/paulmillr/chokidar
 
 ---
